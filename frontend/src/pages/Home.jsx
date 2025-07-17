@@ -1,7 +1,7 @@
 import React from 'react'
-import Navbar from '../components/Navbar'
-import Video from '../components/video'
-import BestSalesSection from '../components/BestSalesSection'
+import Navbar from '../components/Home page/Navbar'
+import Video from '../components/Home page/Video'
+import BestSalesSection from '../components/Home page/BestSalesSection'
 
 function Home() {
   return (
