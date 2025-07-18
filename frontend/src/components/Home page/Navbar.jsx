@@ -15,7 +15,7 @@ function Navbar() {
 
   return (
     <>
-      <div className={`fixed z-10 ${menu?"text-black": "text-white"} w-full h-18 px-4 md:px-8 lg:px-15 flex items-center justify-between backdrop-filter backdrop-blur-sm bg-opacity-50`}>
+      <div className={`fixed z-51 ${menu?"text-black": "text-white"} w-full h-18 px-4 md:px-8 lg:px-15 flex items-center justify-between backdrop-filter backdrop-blur-sm bg-opacity-50`}>
         <div className="cursor-pointer">
           <img
             className="w-12"
@@ -62,7 +62,7 @@ function Navbar() {
       {/* mobile menu options */}
 
       {menu && (
-        <div className="fixed bg-white w-full h-screen top-0 left-0">
+        <div className="fixed bg-white w-full h-screen top-0 left-0 z-50">
           <div className="absolute top-18 left-0 p-4 w-full">
             <div className="w-full ">
               <p className="text-xl font-semibold text-gray-600">Discover</p>
