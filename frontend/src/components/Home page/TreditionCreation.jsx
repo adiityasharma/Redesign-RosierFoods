@@ -2,7 +2,7 @@ import React from 'react'
 
 function TreditionCreation() {
   return (
-    <div className="relative w-full  p-4 md:px-8 lg:px-15 my-10">
+    <div className="relative w-full  p-4 md:px-8 lg:px-15 mt-10 h-330 md:h-490 lg:h-600">
       <div>
         <h1 className="text-5xl md:text-9xl font-extrabold md:font-bold tracking-tighter">
           TRADITION

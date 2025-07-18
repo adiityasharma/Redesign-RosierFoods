@@ -3,6 +3,7 @@ import Navbar from '../components/Home page/Navbar'
 import Video from '../components/Home page/Video'
 import BestSalesSection from '../components/Home page/BestSalesSection'
 import TreditionCreation from '../components/Home page/TreditionCreation';
+import RosierMatters from '../components/Home page/RosierMatters';
 
 function Home() {
   return (
@@ -10,7 +11,8 @@ function Home() {
       <Navbar />
       <Video />
       {/* <BestSalesSection/> */}
-      <TreditionCreation/>
+      <TreditionCreation />
+      <RosierMatters/>
     </div>
   );
 }
