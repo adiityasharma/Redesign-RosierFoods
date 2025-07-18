@@ -4,15 +4,17 @@ import Video from '../components/Home page/Video'
 import BestSalesSection from '../components/Home page/BestSalesSection'
 import TreditionCreation from '../components/Home page/TreditionCreation';
 import RosierMatters from '../components/Home page/RosierMatters';
+import RosierMattersDetails from '../components/Home page/RosierMattersDetails';
 
 function Home() {
   return (
-    <div>
+    <div className="">
       <Navbar />
       <Video />
       {/* <BestSalesSection/> */}
       <TreditionCreation />
-      <RosierMatters/>
+      <RosierMatters />
+      <RosierMattersDetails />
     </div>
   );
 }

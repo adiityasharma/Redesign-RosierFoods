@@ -2,7 +2,7 @@ import React from 'react'
 
 function RosierMatters() {
   return (
-    <div className='w-full h-70 md:h-[80vh] lg:h-screen flex flex-col items-center justify-center'>
+    <div className='w-full h-70 md:h-[80vh] lg:h-screen flex flex-col items-center justify-center bg-[#EDA136] '>
       <div className='w-full text-center text-4xl font-extrabold lg:text-8xl lg:font-bold uppercase md:text-7xl'>
         <h1>Why the rosier</h1>
         <h1>matters</h1>
