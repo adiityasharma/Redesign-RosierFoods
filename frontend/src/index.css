@@ -9,3 +9,15 @@
   background: rgba(0, 0, 0, 0.2);
   z-index: -1;
 }
+
+.nav {
+  transition: color 0.8s ease;
+}
+
+.nav .nav-link {
+  color: white;
+}
+
+.nav.scrolled .nav-link {
+  color: black;
+}
