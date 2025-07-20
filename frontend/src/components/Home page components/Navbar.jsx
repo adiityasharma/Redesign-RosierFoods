@@ -4,12 +4,12 @@ import { FaLess, FaRegUser } from "react-icons/fa";
 import { IoBagHandle, IoSearch } from "react-icons/io5";
 import { IoMdClose } from "react-icons/io";
 import { Link, NavLink, useLocation } from "react-router-dom";
-import { motion } from "motion/react";
+import { motion, useMotionValueEvent, useScroll } from "motion/react";
 import { TextAnimation } from "../../animations/TextAnimation";
 
 function Navbar() {
   const [menu, setMenu] = useState(false);
-
+  
   const handleMenu = () => {
     setMenu(!menu);
   };
@@ -27,13 +27,30 @@ function Navbar() {
     }
   };
 
+  const { scrollY } = useScroll();
+  const [hidden, setHidden] = useState(false);
+
+  useMotionValueEvent(scrollY, "change", (latest) => {
+    const previous = scrollY.getPrevious();
+    if (latest > previous) {
+      setHidden(true)
+    } else {
+      setHidden(false)
+    }
+  })
+
   useEffect(() => {
     window.addEventListener("scroll", changeColor);
   }, []);
 
   return (
     <>
-      <div
+      <motion.div
+        variants={{
+          visible: { y: 0},
+          hidden: {y: -70}
+        }}
+        animate={hidden ? "hidden" : "visible"}
         className={` fixed z-51 ${
           menu ? "text-black" : "text-white"
         } w-full h-18 px-4 md:px-8 lg:px-15 flex items-center justify-between transition-all ease-in duration-500 ${
@@ -99,7 +116,7 @@ function Navbar() {
             </h1>
           </div>
         </div>
-      </div>
+      </motion.div>
 
       {/* mobile menu options */}
 
