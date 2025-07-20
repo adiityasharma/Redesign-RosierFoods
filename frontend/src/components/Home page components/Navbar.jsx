@@ -4,10 +4,11 @@ import { FaLess, FaRegUser } from "react-icons/fa";
 import { IoBagHandle, IoSearch } from "react-icons/io5";
 import { IoMdClose } from "react-icons/io";
 import { Link, NavLink, useLocation } from "react-router-dom";
+import { motion } from "motion/react";
+import { TextAnimation } from "../../animations/TextAnimation";
 
 function Navbar() {
   const [menu, setMenu] = useState(false);
-  
 
   const handleMenu = () => {
     setMenu(!menu);
@@ -19,18 +20,16 @@ function Navbar() {
 
   const changeColor = () => {
     if (window.scrollY >= 500) {
-      setColor(true)
-      console.log(window.scrollY)
+      setColor(true);
+      console.log(window.scrollY);
+    } else {
+      setColor(false);
     }
-    else {
-      setColor(false)
-    }
-  }
+  };
 
   useEffect(() => {
     window.addEventListener("scroll", changeColor);
-  },[])
-  
+  }, []);
 
   return (
     <>
@@ -54,34 +53,44 @@ function Navbar() {
         <div className="flex items-center justify-between gap-1 lg:gap-4">
           <div className="flex items-center justify-center">
             <div className="text-2xl flex">
-              <IoSearch />
+              <TextAnimation childran={<IoSearch />} />
             </div>
           </div>
 
           <div className="hidden md:flex items-center justify-between lg:gap-5 lg:text-xl font-semibold capitalize md:gap-2 md:text-lg">
-            <Link to={"/"}>Home</Link>
-            <Link to={"/shop"}>Shop</Link>
-            <Link to={"/ourstory"}>Our Story</Link>
-            <Link to={"/community"}>Community</Link>
-            <Link to={"/contact"}>Contact us</Link>
+            <TextAnimation childran={<Link to={"/"}>Home</Link>} />
+            <TextAnimation childran={<Link to={"/shop"}>Shop</Link>} />
+            <TextAnimation childran={<Link to={"/ourstory"}>Our Story</Link>} />
+            <TextAnimation
+              childran={<Link to={"/community"}>Community</Link>}
+            />
+            <TextAnimation childran={<Link to={"/contact"}>Contact us</Link>} />
           </div>
 
           <div>
-            <Link
-              to={"/cart"}
-              className="w-10 h-10 text-2xl rounded-full flex items-center justify-center cursor-pointer"
-            >
-              <IoBagHandle />
-            </Link>
+            <TextAnimation
+              childran={
+                <Link
+                  to={"/cart"}
+                  className="w-10 h-10 text-2xl rounded-full flex items-center justify-center cursor-pointer"
+                >
+                  <IoBagHandle />
+                </Link>
+              }
+            />
           </div>
 
           <div>
-            <Link
-              to={"/login"}
-              className="hidden w-10 h-10 text-2xl rounded-full md:flex items-center justify-center cursor-pointer"
-            >
-              <FaRegUser />
-            </Link>
+            <TextAnimation
+              childran={
+                <Link
+                  to={"/login"}
+                  className="hidden w-10 h-10 text-2xl rounded-full md:flex items-center justify-center cursor-pointer"
+                >
+                  <FaRegUser />
+                </Link>
+              }
+            />
           </div>
 
           <div onClick={handleMenu} className="md:hidden lg:hidden">
