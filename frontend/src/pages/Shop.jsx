@@ -60,6 +60,7 @@ function Shop() {
   ];
 
   const [hidePriceFilter, setHidePriceFilter] = useState(true)
+  const [hideSizeFilter, setHideSizeFilter] = useState(true)
 
 
   return (
@@ -114,7 +115,7 @@ function Shop() {
 
         {/* category section */}
 
-        <div className="w-full h-screen px-15 bg-white flex ">
+        <div className="w-full mb-5 px-15 bg-white flex ">
           {/* left side bar */}
           <motion.div className="w-1/4 ">
             {/* category */}
@@ -142,23 +143,24 @@ function Shop() {
             <div className="w-full py-7 border-b-1 ">
               <h1 className="text-3xl font-semibold mb-2">Filter By:</h1>
               {/* price */}
-              <div className="">
+              <div className="mb-2">
                 <div
                   onClick={() => setHidePriceFilter(!hidePriceFilter)}
                   className="flex items-center justify-between w-[80%] px-5 rounded-xl hover:bg-gray-200 bg-gray-100 py-3 text-xl cursor-pointer"
                 >
                   <h1>Price</h1>
                   <div
-                    className={`transition-all ease-in duration-300 ${hidePriceFilter ? "rotate-0" : "rotate-180"}`}>
+                    className={`transition-all ease-in duration-300 ${
+                      hidePriceFilter ? "rotate-0" : "rotate-180"
+                    }`}
+                  >
                     <IoIosArrowDown />
                   </div>
                 </div>
                 <div
                   className={` w-full ${hidePriceFilter ? "hidden" : "block"}`}
                 >
-                  <motion.div
-                    
-                    className="flex items-center gap-2 pl-8 pt-3 ">
+                  <motion.div className="flex items-center gap-2 pl-8 pt-3 ">
                     <input
                       type="checkbox"
                       id="lessThan500"
@@ -194,7 +196,50 @@ function Shop() {
               </div>
               {/* size */}
               <div>
-                
+                <div
+                  onClick={() => setHideSizeFilter(!hideSizeFilter)}
+                  className="flex items-center justify-between w-[80%] px-5 rounded-xl hover:bg-gray-200 bg-gray-100 transition-all ease-in duration-300 py-3 text-xl cursor-pointer"
+                >
+                  <h1>Size</h1>
+                  <div
+                    className={`${hideSizeFilter?"rotate-0": "rotate-180"} transition-all ease-in duration-300`}>
+                    <IoIosArrowDown />
+                  </div>
+                </div>
+                <div className={` w-full ${hideSizeFilter?"hidden": "block"}`}>
+                  <motion.div className="flex items-center gap-2 pl-8 pt-3 ">
+                    <input
+                      type="checkbox"
+                      id="300G"
+                      className="w-5 h-5 cursor-pointer select-none"
+                    />
+                    <label htmlFor="300G">300G</label>
+                  </motion.div>
+                  <div className="flex items-center gap-2 pl-8 pt-3">
+                    <input
+                      type="checkbox"
+                      id="500G"
+                      className="w-5 h-5 cursor-pointer select-none"
+                    />
+                    <label htmlFor="500G">500G</label>
+                  </div>
+                  <div className="flex items-center gap-2 pl-8 pt-3">
+                    <input
+                      type="checkbox"
+                      id="1000G"
+                      className="w-5 h-5 cursor-pointer select-none"
+                    />
+                    <label htmlFor="1000G">1000G</label>
+                  </div>
+                  <div className="flex items-center gap-2 pl-8 pt-3">
+                    <input
+                      type="checkbox"
+                      id="2000G"
+                      className="w-5 h-5 cursor-pointer select-none"
+                    />
+                    <label htmlFor="2000G">2000G</label>
+                  </div>
+                </div>
               </div>
             </div>
           </motion.div>
