@@ -21,3 +21,13 @@
 .nav.scrolled .nav-link {
   color: black;
 }
+
+
+.scrollbar-hide::-webkit-scrollbar {
+  height: 1px;
+  opacity: 0;
+}
+.scrollbar-hide {
+  -ms-overflow-style: none;  
+  scrollbar-width: none;    /* Firefox */
+}
