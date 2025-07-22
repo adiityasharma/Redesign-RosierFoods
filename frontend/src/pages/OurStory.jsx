@@ -35,9 +35,9 @@ function OurStory() {
   ];
 
   return (
-    <div className="w-full bg-amber-100">
-      <div className="relative w-full h-screen  flex items-center justify-center overflow-hidden">
-        <h1 className="uppercase text-9xl font-bold">Our Story</h1>
+    <div className="w-full bg-amber-100 ">
+      <div className="relative w-full pt-15 h-70 lg:h-screen sm:h-100  flex items-center justify-center overflow-hidden">
+        <h1 className="uppercase text-3xl lg:text-9xl font-bold sm:text-5xl">Our Story</h1>
 
         <motion.div
           initial={{
@@ -51,7 +51,7 @@ function OurStory() {
           transition={{
             duration: 0.7,
           }}
-          className="absolute left-20 scale-120 rotate-12"
+          className="absolute lg:left-20 left-[-200px] lg:scale-120 scale-50 sm:scale-75 sm:left-[-100px] rotate-12"
         >
           <img src="../../public/ghee.png" alt="" />
         </motion.div>
@@ -67,13 +67,13 @@ function OurStory() {
           transition={{
             duration: 0.7,
           }}
-          className="absolute right-20 scale-70 -rotate-12"
+          className="absolute lg:right-20 lg:scale-70 -rotate-12 scale-25 right-[-200px] sm:right-[-110px] sm:scale-40"
         >
           <img src="../../public/honey.png" alt="" />
         </motion.div>
       </div>
 
-      <div className="w-full h-screen uppercase flex flex-col items-center justify-center text-9xl font-bold text-white bg-red-600">
+      <div className="w-full lg:h-screen sm:h-100 sm:text-6xl h-50 uppercase flex flex-col items-center justify-center lg:text-9xl font-bold text-white bg-red-600 text-4xl">
         <h1>We are reviving</h1>
         <h1>the traditional</h1>
         <h1>ways of old</h1>

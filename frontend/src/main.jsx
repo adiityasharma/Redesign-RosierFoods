@@ -7,9 +7,9 @@ import Home from './pages/Home.jsx'
 import Shop from './pages/Shop.jsx'
 import OurStory from './pages/OurStory.jsx'
 import ContactUs from './pages/ContactUs.jsx'
-import Community from './pages/Community.jsx'
 import Cart from './pages/Cart.jsx'
 import Login from './pages/Login.jsx'
+import Blogs from './pages/Blogs.jsx'
 
 const router = createBrowserRouter([
   {
@@ -41,8 +41,8 @@ const router = createBrowserRouter([
         element: <ContactUs />,
       },
       {
-        path: "/community",
-        element: <Community />,
+        path: "/blogs",
+        element: <Blogs />,
       },
       {
         path: "/cart",

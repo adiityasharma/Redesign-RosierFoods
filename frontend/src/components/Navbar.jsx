@@ -5,7 +5,7 @@ import { IoBagHandle, IoSearch } from "react-icons/io5";
 import { IoMdClose } from "react-icons/io";
 import { Link, NavLink, useLocation } from "react-router-dom";
 import { motion, useMotionValueEvent, useScroll } from "motion/react";
-import { TextAnimation } from "../../animations/TextAnimation";
+import { TextAnimation } from "../animations/TextAnimation.jsx";
 
 function Navbar() {
   const [menu, setMenu] = useState(false);
@@ -47,8 +47,8 @@ function Navbar() {
     <>
       <motion.div
         variants={{
-          visible: { y: 0},
-          hidden: {y: -70}
+          visible: { y: 0 },
+          hidden: { y: -70 },
         }}
         animate={hidden ? "hidden" : "visible"}
         className={` fixed z-51 ${
@@ -78,9 +78,7 @@ function Navbar() {
             <TextAnimation childran={<Link to={"/"}>Home</Link>} />
             <TextAnimation childran={<Link to={"/shop"}>Shop</Link>} />
             <TextAnimation childran={<Link to={"/ourstory"}>Our Story</Link>} />
-            <TextAnimation
-              childran={<Link to={"/community"}>Community</Link>}
-            />
+            <TextAnimation childran={<Link to={"/blogs"}>Blogs</Link>} />
             <TextAnimation childran={<Link to={"/contact"}>Contact us</Link>} />
           </div>
 

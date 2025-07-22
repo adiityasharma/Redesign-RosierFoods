@@ -1,5 +1,5 @@
 import React from "react";
-import Navbar from "../components/Home page components/Navbar";
+import Navbar from "../components/Navbar.jsx";
 import Video from "../components/Home page components/Video";
 import BestSalesSection from "../components/Home page components/BestSalesSection";
 import TreditionCreation from "../components/Home page components/TreditionCreation";
