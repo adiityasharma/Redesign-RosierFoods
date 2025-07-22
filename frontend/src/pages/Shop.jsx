@@ -3,6 +3,9 @@ import { FaArrowAltCircleLeft } from "react-icons/fa";
 import { FaArrowAltCircleRight } from "react-icons/fa";
 import { motion } from "framer-motion";
 import { IoIosArrowDown } from "react-icons/io";
+import { MdAddShoppingCart } from "react-icons/md";
+import SingleProduct from "../components/shopPageComponents/SingleProduct";
+
 
 
 function Shop() {
@@ -62,6 +65,9 @@ function Shop() {
   const [hidePriceFilter, setHidePriceFilter] = useState(true)
   const [hideSizeFilter, setHideSizeFilter] = useState(true)
 
+  // for mobile
+  const [openFilter, setOpenFliter] = useState(false);
+
 
   return (
     <div>
@@ -113,11 +119,112 @@ function Shop() {
           </div>
         </div>
 
-        {/* category section */}
+        {/* topbar only for mobile */}
 
-        <div className="w-full mb-5 px-15 bg-white flex ">
+        <div className="lg:hidden w-full p-4 ">
+          <div
+            onClick={()=> setOpenFliter(!openFilter)}
+            className="text-2xl font-semibold flex items-center justify-between bg-gray-100 px-5 py-4 rounded-2xl">
+            <h1>Filter</h1>
+            <div className={`transition-all ease-in ${openFilter? "rotate-180" : "rotate-0"}`}>
+              <IoIosArrowDown />
+            </div>
+          </div>
+
+          <div className={`w-full py-5 ${openFilter? "block": "hidden"}`}>
+            {/* category */}
+            <div>
+              <h1 className="font-semibold text-2xl">Category:</h1>
+              <div>
+                {categories.map((category, index) => (
+                  <h1 className="pl-5 mt-1 font-semibold" key={index}>
+                    {category}
+                  </h1>
+                ))}
+              </div>
+            </div>
+
+            {/* price */}
+            <div>
+              <h1 className="font-semibold text-2xl mt-4">Price:</h1>
+              <div className="flex items-center gap-2 pl-5 mt-1 font-semibold">
+                <input
+                  type="checkbox"
+                  id="lessthen500"
+                  className="w-5 h-5 cursor-pointer select-none"
+                />
+                <label htmlFor="lessthen500">Less Than 500</label>
+              </div>
+              <div className="flex items-center gap-2 pl-5 mt-1 font-semibold">
+                <input
+                  type="checkbox"
+                  id="500~1000"
+                  className="w-5 h-5 cursor-pointer select-none"
+                />
+                <label htmlFor="500~1000">500~1000</label>
+              </div>
+              <div className="flex items-center gap-2 pl-5 mt-1 font-semibold">
+                <input
+                  type="checkbox"
+                  id="1000~2000"
+                  className="w-5 h-5 cursor-pointer select-none"
+                />
+                <label htmlFor="1000~2000">1000~2000</label>
+              </div>
+              <div className="flex items-center gap-2 pl-5 mt-1 font-semibold">
+                <input
+                  type="checkbox"
+                  id="morethan2000"
+                  className="w-5 h-5 cursor-pointer select-none"
+                />
+                <label htmlFor="morethan2000">More Than 2000</label>
+              </div>
+            </div>
+
+            {/* size */}
+            <div>
+              <h1 className="font-semibold text-2xl mt-4">Price:</h1>
+              <div className="flex items-center gap-2 pl-5 mt-1 font-semibold">
+                <input
+                  type="checkbox"
+                  id="500G"
+                  className="w-5 h-5 cursor-pointer select-none"
+                />
+                <label htmlFor="500G">500G</label>
+              </div>
+              <div className="flex items-center gap-2 pl-5 mt-1 font-semibold">
+                <input
+                  type="checkbox"
+                  id="1000G"
+                  className="w-5 h-5 cursor-pointer select-none"
+                />
+                <label htmlFor="1000G">1000G</label>
+              </div>
+              <div className="flex items-center gap-2 pl-5 mt-1 font-semibold">
+                <input
+                  type="checkbox"
+                  id="1KG"
+                  className="w-5 h-5 cursor-pointer select-none"
+                />
+                <label htmlFor="1KG">1KG</label>
+              </div>
+              <div className="flex items-center gap-2 pl-5 mt-1 font-semibold">
+                <input
+                  type="checkbox"
+                  id="2KG"
+                  className="w-5 h-5 cursor-pointer select-none"
+                />
+                <label htmlFor="2KG">2KG</label>
+              </div>
+            </div>
+
+          </div>
+        </div>
+
+        {/* category section */}
+        <div className="w-full mb-5 p-4 lg:px-15 bg-white flex gap-5">
           {/* left side bar */}
-          <motion.div className="w-1/4 ">
+          <motion.div className="w-1/4 hidden lg:block">
             {/* category */}
             <div className="w-full py-7 border-b-1">
               <h1 className="text-3xl font-semibold mb-3">Category</h1>
@@ -202,11 +309,16 @@ function Shop() {
                 >
                   <h1>Size</h1>
                   <div
-                    className={`${hideSizeFilter?"rotate-0": "rotate-180"} transition-all ease-in duration-300`}>
+                    className={`${
+                      hideSizeFilter ? "rotate-0" : "rotate-180"
+                    } transition-all ease-in duration-300`}
+                  >
                     <IoIosArrowDown />
                   </div>
                 </div>
-                <div className={` w-full ${hideSizeFilter?"hidden": "block"}`}>
+                <div
+                  className={` w-full ${hideSizeFilter ? "hidden" : "block"}`}
+                >
                   <motion.div className="flex items-center gap-2 pl-8 pt-3 ">
                     <input
                       type="checkbox"
@@ -244,7 +356,20 @@ function Shop() {
             </div>
           </motion.div>
           {/* all products */}
-          <div className="w-[75%]"></div>
+          <div className="w-full lg:w-[75%] h-full">
+            <div className="w-full py-7">
+              <h1 className="text-3xl font-bold">Category</h1>
+            </div>
+
+            <div className="w-full h-full grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5 lg:gap-8 mt-1 lg:mt-4">
+              <SingleProduct />
+              <SingleProduct />
+              <SingleProduct />
+              <SingleProduct />
+              <SingleProduct />
+              <SingleProduct />
+            </div>
+          </div>
         </div>
       </div>
     </div>
