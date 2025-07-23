@@ -7,11 +7,11 @@ function RegisterUser() {
   const [password, setPassword] = useState("");
   const [confirmPassword, setConfirmPassword] = useState("");
   const [message, setMessage] = useState("");
-  const [messageType, setMessageType] = useState(""); // 'success' or 'error'
+  const [messageType, setMessageType] = useState(""); 
 
   const handleSubmit = (event) => {
     event.preventDefault();
-    setMessage(""); // Clear previous messages
+    setMessage(""); 
     setMessageType("");
 
     if (password !== confirmPassword) {
@@ -20,13 +20,11 @@ function RegisterUser() {
       return;
     }
 
-    // In a real application, you would send this data to your backend API
-    // for user registration. For this example, we'll just simulate success.
+    
     console.log("Registering user:", { username, email, password });
     setMessage("Registration successful! You can now log in.");
     setMessageType("success");
 
-    // Optionally clear form fields after successful registration
     setUsername("");
     setEmail("");
     setPassword("");

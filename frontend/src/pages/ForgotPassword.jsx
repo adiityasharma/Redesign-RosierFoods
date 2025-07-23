@@ -3,27 +3,21 @@ import React, { useState } from "react";
 function ForgotPassword() {
   const [email, setEmail] = useState("");
   const [message, setMessage] = useState("");
-  const [messageType, setMessageType] = useState(""); // 'success' or 'error'
+  const [messageType, setMessageType] = useState(""); 
 
   const handleSubmit = (event) => {
     event.preventDefault();
-    setMessage(""); // Clear previous messages
+    setMessage(""); 
     setMessageType("");
-
-    // In a real application, you would send a request to your backend API
-    // to initiate the password reset process for the given email.
-    // The backend would then send a password reset link to the user's email.
 
     console.log("Password reset request for email:", email);
 
-    // Simulate an API call success/failure
     if (email.includes("@") && email.includes(".")) {
-      // Simple email format check
       setMessage(
         "If an account with that email exists, a password reset link has been sent."
       );
       setMessageType("success");
-      setEmail(""); // Clear the email field
+      setEmail(""); 
     } else {
       setMessage("Please enter a valid email address.");
       setMessageType("error");
