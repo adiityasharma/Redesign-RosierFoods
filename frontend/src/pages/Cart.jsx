@@ -14,10 +14,7 @@ function Cart() {
 
         <div className="grid grid-cols-1 gap-2">
           <CartProductLayout />
-          <CartProductLayout />
-          <CartProductLayout />
-          <CartProductLayout />
-          <CartProductLayout />
+          
         </div>
       </div>
 

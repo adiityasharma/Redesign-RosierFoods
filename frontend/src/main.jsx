@@ -10,6 +10,8 @@ import ContactUs from './pages/ContactUs.jsx'
 import Cart from './pages/Cart.jsx'
 import Login from './pages/Login.jsx'
 import Blogs from './pages/Blogs.jsx'
+import RegisterUser from './pages/RegisterUser.jsx'
+import ForgotPassword from './pages/ForgotPassword.jsx'
 
 const router = createBrowserRouter([
   {
@@ -51,6 +53,14 @@ const router = createBrowserRouter([
       {
         path: "/login",
         element: <Login />,
+      },
+      {
+        path: "/signin",
+        element: <RegisterUser />,
+      },
+      {
+        path: "/forgotpassword",
+        element: <ForgotPassword />,
       },
     ],
   },
